@@ -19,11 +19,11 @@ impl generic_ec_core::Curve for Ristretto255 {
 
     type ScalarArray = <Scalar as generic_ec_core::IntegerEncoding>::Bytes;
 
-    // We don't expose affine coordinates for ed25519 curve
+    // We don't expose affine coordinates for ristretto255 curve
     type CoordinateArray = [u8; 0];
 }
 
-/// Ed25519 point
+/// Ristretto255 point
 #[derive(Clone, Copy, PartialEq, Eq, zeroize::Zeroize)]
 #[repr(transparent)]
 pub struct Point(pub curve25519_dalek::RistrettoPoint);
@@ -144,7 +144,7 @@ impl Default for Point {
     }
 }
 
-/// Ed25519 scalar
+/// Ristretto255 scalar
 #[derive(Default, Clone, Copy, PartialEq, Eq, zeroize::Zeroize)]
 pub struct Scalar(pub curve25519_dalek::Scalar);
 
