@@ -1,5 +1,7 @@
 //! Operations on the `ristretto` group over Curve25519.
 
+#![no_std]
+
 /// Ristretto over Curve25519.
 #[derive(Clone, Copy, Debug, PartialEq, PartialOrd, Eq, Ord, Hash, Default, zeroize::Zeroize)]
 pub struct Ristretto255 {
