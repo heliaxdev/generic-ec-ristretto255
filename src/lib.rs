@@ -1,6 +1,11 @@
 //! Operations on the `ristretto` group over Curve25519.
 
+// This code is copied and modified from the `generic-ec-curves` crate.
+
 #![no_std]
+
+#[cfg(feature = "hd-wallet")]
+pub mod hd_wallet;
 
 /// Ristretto over Curve25519.
 #[derive(Clone, Copy, Debug, PartialEq, PartialOrd, Eq, Ord, Hash, Default, zeroize::Zeroize)]
